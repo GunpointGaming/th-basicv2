@@ -1,5 +1,5 @@
 'scopeName': 'source.thbasic'
-'name': 'Telehack BASIC 2.0' # Mostly copied from Commadore BAISC 2.0 language package
+'name': 'Telehack BASIC 2.0' # Mostly copied from Commadore BAISC 2.0 language package, forked from language-thbasic
 'fileTypes': ['bas', 'basic']
 'patterns': [
 # deprecated
