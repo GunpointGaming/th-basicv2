@@ -1,10 +1,28 @@
 {
-  "name": "th-basicv2",
+  "author": {
+    "name": "GunpointG",
+    "email": "01-photos-return@icloud.com"
+  },
   "description": "Updated Telehack BASIC Syntax Highlighting",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://atom.io/packages/th-basicv2",
+  "keywords": [
+    "Atom",
+    "package",
+    "language",
+    "basic",
+    "telehack",
+    "th",
+    "syntax",
+    "highlight"
+  ],
+  "license": "MIT",
+  "name": "th-basicv2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GunpointGaming/th-basicv2.git"
+    "url": "https://github.com/GunpointGaming/th-basicv2"
   },
-  "version": "0.0.0",
-  "engines": { "atom": ">=1.0.0 <2.0.0" }
+  "version": "0.0.0"
 }
