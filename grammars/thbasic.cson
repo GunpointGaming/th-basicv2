@@ -1,5 +1,5 @@
 'scopeName': 'source.cbmbasic'
-'name': 'Telehack BASIC v2.0' # Mostly copied from Commadore BAISC 2.0 language package
+'name': 'Telehack BASIC 2.0' # Mostly copied from Commadore BAISC 2.0 language package
 'fileTypes': ['bas', 'basic']
 'patterns': [
 # deprecated
