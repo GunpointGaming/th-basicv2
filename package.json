@@ -3,7 +3,6 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "license": "MIT",
   "name": "th-basicv2",
   "repository": {
     "type": "git",
