@@ -7,7 +7,6 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "homepage": "https://atom.io/packages/th-basicv2",
   "keywords": [
     "Atom",
     "package",
