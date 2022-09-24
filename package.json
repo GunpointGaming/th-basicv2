@@ -1,10 +1,10 @@
 {
-  "description": "Updated Telehack BASIC Syntax Highlighting",
-  "engines": { "atom": ">=1.0.0 <2.0.0" },
   "name": "th-basicv2",
+  "description": "Updated Telehack BASIC Syntax Highlighting",
   "repository": {
     "type": "git",
     "url": "https://github.com/GunpointGaming/th-basicv2.git"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "engines": { "atom": ">=1.0.0 <2.0.0" }
 }
