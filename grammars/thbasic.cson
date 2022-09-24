@@ -1,0 +1,629 @@
+'scopeName': 'source.cbmbasic'
+'name': 'Telehack BASIC 0.1' # Mostly copied from Commadore BAISC 2.0 language package
+'fileTypes': ['bas', 'basic']
+'patterns': [
+# deprecated
+#  { # lines that do not begin with a line number are marked invalid
+#    'match': '^\\D+'
+#    'name': 'invalid.illegal.cbmbasic'
+#  }
+  { # numeric constants, which may include scientific notation
+    'match': '(^\\d+)|(\\b(([0-9]+(\\.|\\s*E\\s*)?[0-9]*)|(\\.[0-9]+))\\b)'
+    'captures':
+      '1':
+        'name': 'markup.bold.cbmbasic'
+      '2':
+        'name': 'constant.numeric.cbmbasic'
+    'name': 'meta.constant.cbmbasic'
+  }
+  {
+    'match': '^<\\D+>'
+    'name': 'constant.numeric.cbmbasic'
+  }
+  { # strings
+    'match': '(")([^"]*(")|.*\\n|.*$)'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.string.begin.cbmbasic'
+      '2':
+        'name': 'string.quoted.double.cbmbasic'
+      '3':
+        'name': 'punctuation.definition.string.begin.cbmbasic'
+    'name': 'meta.string.quoted.double.cbmbasic'
+  }
+  { # labels
+    'match': '(<)([a-z]+\\S(>))'
+    'name': 'constant.numeric.cbmbasic'
+  }
+  { # operators
+    'match': ':|;|=|\\+|-|\\*|/|\\^|\\?|!|\\[|\\]|"|&|<|>|<>|\\\\|@'
+    'name': 'keyword.operator.cbmbasic'
+    #'name': 'constant.numeric.cbmbasic'
+  }
+# { # functions
+#   'match': '\\b([A-Z]+\\$?)\\s*\\([^)]+\\)'
+#   'captures':
+#     '1':
+#       'name': 'entity.name.function.cbmbasic'
+# }
+
+# BEGIN TH_ ADDONS
+  { #TH_SYSLEVEL command
+    'match': '\\b((?i)TH_SYSLEVEL)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_HASBADGE command
+    'match': '\\b((?i)TH_HASBADGE)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_HASLOGIN command
+    'match': '\\b((?i)TH_HASLOGIN)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_HASROOT command
+    'match': '\\b((?i)TH_HASROOT)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_HASADMIN command
+    'match': '\\b((?i)TH_HASADMIN)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_DEFGROUP$ variable
+    'match': '\\b((?i)TH_DEFGROUP\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_PLAN$ variable
+    'match': '\\b((?i)TH_PLAN\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_TIME variable
+    'match': '\\b((?i)TH_TIME)\\b'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_LOCALTIME($) variable
+    'match': '\\b((?i)TH_LOCALTIME(\\$|\\b))'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_GMTIME($) variable
+    'match': '\\b((?i)TH_GMTIME(\\$|\\b))'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_MODEM$ variable
+    'match': '\\b((?i)TH_MODEM\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_HOSTNAME$ variable
+    'match': '\\b((?i)TH_HOSTNAME\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_NETSTAT$ variable
+    'match': '\\b((?i)TH_NETSTAT\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { #TH_MD5HEX$ function
+    'match': '\\b((?i)TH_MD5HEX\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { #TH_MD5BASE64$ function
+    'match': '\\b((?i)TH_MD5BASE64\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { #TH_B64E$ function
+    'match': '\\b((?i)TH_B64E\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { #TH_B64D$ function
+    'match': '\\b((?i)TH_B64D\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { #TH_EXEC command
+    'match': '\\b((?i)TH_EXEC)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_RE($) command
+    'match': '\\b((?i)TH_RE(\\$|\\b))'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_REV$ command
+    'match': '\\b((?i)TH_RE\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_SED$ command
+    'match': '\\b((?i)TH_SED\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_SPRINTF$ command
+    'match': '\\b((?i)TH_SPRINTF\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { #TH_UUE$ function
+    'match': '\\b((?i)TH_UUE\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { #TH_UUD$ function
+    'match': '\\b((?i)TH_UUD\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+# END ADDONS
+
+  { # functions without arguments are invalid
+    'match': '\\b([A-Z]+\\$?)\\s*\\(\\)'
+    'name': 'invalid.illegal.cbmbasic'
+  }
+  { # ABS function
+    'match': '\\b((?i)ABS)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # AND operator
+    'match': '\\b((?i)AND)\\b'
+    'name': 'keyword.operator.cbmbasic'
+  }
+  { # AS function
+    'match': '\\b((?i)AS)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # ASC function
+    'match': '\\b((?i)ASC)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # ARG command
+    'match': '\\b((?i)ARG\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # ARGV$ command
+    'match': '\\b((?i)ARGV\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # ARGC% command
+    'match': '\\b((?i)ARGC\\%)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # ATN function
+    'match': '\\b((?i)ATN)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # BEEP command
+    'match': '\\b((?i)BEEP)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # BIN$ function
+    'match': '\\b((?i)BIN\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # BRK function (technically deprecated in th_basic)
+    'match': '\\b((?i)BRK)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # CHR$ function
+    'match': '\\b((?i)CHR\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # CINT function
+    'match': '\\b((?i)CINT)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # CLOSE command
+    'match': '\\b((?i)CLOSE)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # CLEAR command
+    'match': '\\b((?i)CLEAR)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # CLS command
+    'match': '\\b((?i)CLS)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  # deprecated (does nothing in th_basic)
+  #{ # CMD command
+  #  'match': '\\b((?i)CMD)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  #{ # CONT command
+  #  'match': '\\b((?i)CONT)'
+  #  'name': 'keyword.control.cbmbasic'
+  #}
+  { # COLOR command
+    'match': '\\b((?i)COLOR)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # COS function
+    'match': '\\b((?i)COS)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # CSNG function
+    'match': '\\b((?i)CSNG)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  # deprecated (error in th_basic)
+  #{ # CTL function
+  #  'match': '\\b((?i)CTL)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  #{ # D2R function
+  #  'match': '\\b((?i)D2R)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  { # DATA command
+    'match': '\\b((?i)DATA)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DATE variable
+    'match': '\\b((?i)DATE)\\b'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # DEF command
+    'match': '\\b((?i)DEF(\\s*)?((?i)FN)?)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DEFDBL command
+    'match': '\\b((?i)DEFDBL)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DEFINT command
+    'match': '\\b((?i)DEFINT)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DEFSNG command
+    'match': '\\b((?i)DEFSNG)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DEFSTR command
+    'match': '\\b((?i)DEFSTR)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DIM command
+    'match': '\\b((?i)DIM)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # DIR$ variable
+    'match': '\\b((?i)DIR\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # END command
+    'match': '\\b((?i)END)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # EOF command
+    'match': '\\b((?i)EOF)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # EXP function
+    'match': '\\b((?i)EXP)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # FOR command
+    'match': '\\b((?i)FOR)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # GET command
+    'match': '\\b((?i)GET)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # GOSUB command
+    'match': '\\b((?i)GOSUB)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # GOTO command
+    'match': '\\b((?i)GO(\\s*)?(?i)TO)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # HEIGHT function
+    'match': '\\b((?i)HEIGHT)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # HEX$ function
+    'match': '\\b((?i)HEX\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # IF command
+    'match': '\\b((?i)IF)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # INKEY$ function
+    'match': '\\b((?i)INKEY\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # INPUT$ command
+    'match': '\\b((?i)INPUT\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # INSTR command
+    'match': '\\b((?i)INSTR)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # INT command
+    'match': '\\b((?i)INT)\\b'
+    'name': 'keyword.control.cbmbasi'
+  }
+  { # ITM function
+    'match': '\\b((?i)ITM)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  # deprecated (command in telehack although appears to do nothing) (note: takes arguments on/off)
+  #{ # KEY function
+  #  'match': '\\b((?i)KEY)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  { # LEFT$ function
+    'match': '\\b((?i)LEFT\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # LEN function
+    'match': '\\b((?i)LEN)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # LET command
+    'match': '\\b((?i)LET)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  # deprecated (does nothing in th_basic)
+  #{ # LG command
+  #  'match': '\\b((?i)LG)'
+  #  'name': 'keyword.control.cbmbasic'
+  #}
+  { # LIN command
+    'match': '\\b((?i)LIN)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  # deprecated (does nothing in th_basic)
+  #{ # LINE command
+  #  'match': '\\b((?i)LINE)\\b'
+  #  'name': 'keyword.control.cbmbasic'
+  #}
+  #{ # LN command
+  #  'match': '\\b((?i)LN)'
+  #  'name': 'keyword.control.cbmbasic'
+  #}
+  { # LOCATE command
+    'match': '\\b((?i)LOCATE)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # LOG function
+    'match': '\\b((?i)LOG)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # LOG10 function
+    'match': '\\b((?i)LOG10)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # MOD operator
+    'match': '\\b((?i)MOD)\\b'
+    'name': 'keyword.operator.cbmbasic'
+  }
+  { # MID$ function
+    'match': '\\b((?i)MID\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  # deprecated
+  #{ # NEW command
+  #  'match': '\\b((?i)NEW)'
+  #  'name': 'keyword.control.cbmbasic'
+  #}
+  { # NEXT command
+    'match': '\\b((?i)NEXT)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # NINT function
+    'match': '\\b((?i)NINT)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # NOT operator
+    'match': '\\b((?i)NOT)\\b'
+    'name': 'keyword.operator.cbmbasic'
+  }
+  { # OCT$ function
+    'match': '\\b((?i)OCT\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # ON command
+    'match': '\\b((?i)ON)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # OPEN command
+    'match': '\\b((?i)OPEN)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  # deprecated (does nothing)
+  #{ # PCLEAR0 function
+  #  'match': '\\b((?i)PCLEAR0)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  #{ # PCLEAR1 function
+  #  'match': '\\b((?i)PCLEAR1)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  { # PEEK command
+    'match': '\\b((?i)PEEK)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  # deprecated (does nothing)
+  #{ # PMODE0 function
+  #  'match': '\\b((?i)PMODE0)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  { # POKE command
+    'match': '\\b((?i)POKE)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # POLKEY$ command
+    'match': '\\b((?i)POLKEY\\$)(\\b|\\s)'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # PORT% variable
+    'match': '\\b((?i)PORT\\%)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # POS function
+    'match': '\\b((?i)POS)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # PRINT command
+    'match': '\\b((?i)PRINT)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # R2D function
+    'match': '\\b((?i)R2D)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # RANDOMIZE command
+    'match': '\\b((?i)RANDOMIZE)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # READ command
+    'match': '\\b((?i)READ)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # REC command
+    'match': '((?i)REC)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # REM command (comments)
+    'match': '((?i)REM.*(\\n|$))'
+    'name': 'comment.line.cbmbasic'
+  }
+  { # REM command (')
+    'match': '(\'.*(\\n|$))'
+    'name': 'comment.line.cbmbasic'
+  }
+  { # RESTORE command
+    'match': '\\b((?i)RESTORE)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # RETURN command
+    'match': '\\b((?i)RETURN)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # RIGHT$ function
+    'match': '\\b((?i)RIGHT\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # RND function
+    'match': '\\b((?i)RND)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # RUN command (marked as error. although technically a command, entering in a program causes a freeze)
+    'match': '\\b((?i)RUN)\\s'
+    'name': 'invalid.illegal.cbmbasic'
+  }
+  { # SCR command
+    'match': '\\b((?i)SCR)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # SCRATCH command
+    'match': '\\b((?i)SCRATCH)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # SGN function
+    'match': '\\b((?i)SGN)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # SIN function
+    'match': '\\b((?i)SIN)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # SLEEP command
+    'match': '\\b((?i)SLEEP)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  # deprecated (returns syntax error in basic)
+  #{ # SPA function
+  #  'match': '\\b((?i)SPA)\\b'
+  #  'name': 'entity.name.function.cbmbasic'
+  #}
+  { # SPACE$ function
+    'match': '\\b((?i)SPACE\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # SPC$ function
+    'match': '\\b((?i)SPC\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # SQR function
+    'match': '\\b((?i)SQR)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # SQRT function
+    'match': '\\b((?i)SQRT)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # STOP command
+    'match': '\\b((?i)STOP)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # STR$ function
+    'match': '\\b((?i)STR\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # STRING$ function
+    'match': '\\b((?i)STRING\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  # deprecated (indexed in basic.man, although returns nothing)
+  #{ # SYS system variable
+  #  'match': '\\b((?i)SYS)\\b'
+  #  'name': 'variable.language.cbmbasic'
+  #}
+  # deprecated (doesnt exist in th_basic, only in original basic)
+  #{ # SYSTEM system variable
+  #  'match': '\\b((?i)SYSTEM)\\b'
+  #  'name': 'variable.language.cbmbasic'
+  #}
+  { # TAB$ function
+    'match': '\\b((?i)TAB(\\$|\\b))'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # TAN function
+    'match': '\\b((?i)TAN)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # THEN command
+    'match': '\\b((?i)THEN)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # TIM variable
+    'match': '\\b((?i)TIM)\\b'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # TIME/TIME$ system variables
+    'match': '\\b((?i)TIME(\\$|\\b))'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # TIMER variable
+    'match': '\\b((?i)TIMER)\\b'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # TROFF/ON command
+    'match': '\\b((?i)TR(OFF|ON))\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+# deprecated
+#  { # TI/TI$ system variables
+#    'match': '\\b((?i)TI(\\$|\\b))'
+#    'name': 'variable.language.cbmbasic'
+#  }
+  { # TO command
+    'match': '\\b((?i)TO)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # TYP command
+    'match': '\\b((?i)TYP)\\b'
+    'name': 'keyword.control.cbmbasic'
+  }
+  { # UPS$ function
+    'match': '\\b((?i)UPS\\$)(\\b|\\s)'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # USER$ function
+    'match': '\\b((?i)USER\\$)(\\b|\\s)'
+    'name': 'variable.language.cbmbasic'
+  }
+  { # VAL function
+    'match': '\\b((?i)VAL)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+  { # WIDTH function
+    'match': '\\b((?i)WIDTH)\\b'
+    'name': 'entity.name.function.cbmbasic'
+  }
+]
