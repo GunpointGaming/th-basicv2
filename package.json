@@ -8,5 +8,6 @@
     "type": "git",
     "url": "git+https://github.com/GunpointGaming/th-basicv2.git"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "main": "lib/main"
 }
