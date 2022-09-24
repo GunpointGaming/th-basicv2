@@ -18,11 +18,11 @@
     "syntax",
     "highlight"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "name": "th-basicv2",
   "repository": {
     "type": "git",
     "url": "https://github.com/GunpointGaming/th-basicv2"
   },
-  "version": "0.0.0"
+  "version": "0.1.0"
 }
