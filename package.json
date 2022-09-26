@@ -1,6 +1,6 @@
 {
   "author": {
-    "name": "GunpointG",
+    "name": "GunpointGaming",
     "email": "01-photos-return@icloud.com"
   },
   "description": "Updated Telehack BASIC Syntax Highlighting",
@@ -21,7 +21,7 @@
   "name": "th-basicv2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GunpointGaming/th-basicv2.git"
+    "url": "https://github.com/GunpointGaming/th-basicv2"
   },
-  "version": "0.0.0"
+  "version": "0.1.0"
 }
